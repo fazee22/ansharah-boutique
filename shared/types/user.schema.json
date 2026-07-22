@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User",
+  "description": "Shape produced by backend/app/Http/Resources/UserResource.php and consumed by frontend/src/types/user.ts:User",
+  "type": "object",
+  "required": ["id", "name", "email", "role", "createdAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "email": { "type": "string", "format": "email" },
+    "role": { "enum": ["customer", "admin", "super_admin"] },
+    "emailVerifiedAt": { "type": ["string", "null"], "format": "date-time" },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}

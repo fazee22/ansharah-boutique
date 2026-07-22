@@ -1,0 +1,10 @@
+{
+  "userRole": {
+    "description": "Mirrored by frontend/src/types/user.ts:UserRole and the `role` enum column in backend/database/migrations/0001_01_01_000000_create_users_table.php",
+    "values": ["customer", "admin", "super_admin"]
+  },
+  "currency": {
+    "description": "Mirrored by frontend/src/config/site.ts:siteConfig.supportedCurrencies",
+    "values": ["PKR", "USD", "AED"]
+  }
+}

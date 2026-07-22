@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * ============================================================
+ * LUXURY FASHION DESIGN SYSTEM — TOKEN LAYER
+ * ============================================================
+ * Values are HSL triplets (no `hsl()` wrapper) so Tailwind can
+ * apply opacity modifiers, e.g. `bg-brass/20`.
+ *
+ * Brand reference palette (for design tooling / Figma handoff):
+ *   Ink        #14140F   — near-black, warm undertone, primary text
+ *   Canvas     #F4F0E6   — warm off-white, primary background
+ *   Porcelain  #FAF8F3   — lighter surface, cards / panels
+ *   Brass      #B08D46   — signature metallic accent (CTAs, focus)
+ *   Evergreen  #1F3A30   — deep botanical green, secondary accent
+ *   Stone      #DCD5C7   — neutral border / divider
+ * ============================================================
+ */
+@layer base {
+  :root {
+    /* Brand vocabulary */
+    --ink: 40 14% 6%;
+    --canvas: 42 32% 94%;
+    --porcelain: 40 38% 98%;
+    --brass: 38 43% 48%;
+    --brass-light: 38 48% 62%;
+    --brass-dark: 36 40% 34%;
+    --evergreen: 160 33% 17%;
+    --evergreen-light: 160 26% 27%;
+    --evergreen-dark: 160 40% 10%;
+    --stone: 38 22% 85%;
+    --hairline: 38 18% 88%;
+
+    /* Semantic tokens (Shadcn UI contract) */
+    --background: var(--canvas);
+    --foreground: var(--ink);
+
+    --card: var(--porcelain);
+    --card-foreground: var(--ink);
+
+    --popover: var(--porcelain);
+    --popover-foreground: var(--ink);
+
+    --primary: var(--ink);
+    --primary-foreground: var(--porcelain);
+
+    --secondary: var(--evergreen);
+    --secondary-foreground: var(--porcelain);
+
+    --muted: 40 18% 90%;
+    --muted-foreground: 40 8% 38%;
+
+    --accent: var(--brass);
+    --accent-foreground: var(--ink);
+
+    --destructive: 6 55% 40%;
+    --destructive-foreground: 40 38% 98%;
+
+    --border: var(--hairline);
+    --input: var(--hairline);
+    --ring: var(--brass);
+
+    --radius: 0.375rem;
+  }
+
+  /**
+   * Dark mode is used by the admin dashboard shell (Phase 6) — see
+   * `components/admin/layout/theme-toggle.tsx` and
+   * `store/admin-theme-store.ts`. The customer-facing storefront
+   * stays on the light editorial palette unconditionally; nothing
+   * there ever adds the `.dark` class.
+   */
+  .dark {
+    --ink: 40 20% 96%;
+    --canvas: 40 10% 7%;
+    --porcelain: 40 8% 10%;
+    --brass: 38 55% 58%;
+    --brass-light: 38 60% 68%;
+    --brass-dark: 36 45% 42%;
+    --evergreen: 160 30% 32%;
+    --evergreen-light: 160 26% 42%;
+    --evergreen-dark: 160 35% 20%;
+    --stone: 40 8% 22%;
+    --hairline: 40 8% 20%;
+
+    --background: var(--canvas);
+    --foreground: var(--ink);
+    --card: var(--porcelain);
+    --card-foreground: var(--ink);
+    --popover: var(--porcelain);
+    --popover-foreground: var(--ink);
+    --primary: var(--porcelain);
+    --primary-foreground: var(--ink);
+    --secondary: var(--evergreen);
+    --secondary-foreground: var(--porcelain);
+    --muted: 40 8% 16%;
+    --muted-foreground: 40 10% 65%;
+    --accent: var(--brass);
+    --accent-foreground: var(--ink);
+    --destructive: 6 55% 48%;
+    --destructive-foreground: 40 10% 96%;
+    --border: var(--hairline);
+    --input: var(--hairline);
+    --ring: var(--brass);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  /* Visible, on-brand focus ring for keyboard navigation. Never remove
+     outline without supplying this replacement — accessibility floor. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brass ring-offset-2 ring-offset-background;
+  }
+
+  ::selection {
+    @apply bg-brass/25 text-ink;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

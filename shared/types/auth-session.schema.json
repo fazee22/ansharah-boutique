@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AuthSession",
+  "description": "Shape returned by POST /api/v1/auth/login and /auth/register, and consumed by frontend/src/types/user.ts:AuthSession",
+  "type": "object",
+  "required": ["user", "accessToken", "expiresAt"],
+  "properties": {
+    "user": { "$ref": "./user.schema.json" },
+    "accessToken": { "type": "string" },
+    "expiresAt": { "type": "string", "format": "date-time" }
+  }
+}

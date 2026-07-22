@@ -1,0 +1,10 @@
+# Root-level ignore — see frontend/.gitignore and backend/.gitignore for stack-specific rules
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.env
+.env.*
+!.env.example
