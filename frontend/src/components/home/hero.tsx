@@ -48,7 +48,7 @@ function Hero() {
         title: slide.title ?? "",
         description: slide.subtitle ?? "",
         imageUrl: slide.imageUrl,
-        tone: FALLBACK_TONES[index % FALLBACK_TONES.length],
+        tone: FALLBACK_TONES[index % FALLBACK_TONES.length]!,
         primaryCta: { label: slide.ctaLabel ?? "Shop Now", href: slide.linkUrl ?? ROUTES.newArrivals },
         secondaryCta: { label: "Explore Collection", href: ROUTES.collections },
       }));

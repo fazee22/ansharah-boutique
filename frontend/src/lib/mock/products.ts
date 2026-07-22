@@ -103,7 +103,7 @@ function buildProducts(): Product[] {
       const isSale = rand < 0.22;
       const isNew = seededRandom(seed * 3) < 0.2;
       const isFeatured = seededRandom(seed * 5) < 0.15;
-      const descriptor = NAME_DESCRIPTORS[(leafIndex + i) % NAME_DESCRIPTORS.length];
+      const descriptor = NAME_DESCRIPTORS[(leafIndex + i) % NAME_DESCRIPTORS.length]!;
       const descriptions = buildDescriptions(leaf.label, categoryLabels);
       const deliveryFast = 2 + (seed % 2);
 
