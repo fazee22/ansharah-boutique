@@ -26,7 +26,7 @@ export const ROUTES = {
   paymentFailed: "/payment/failed",
   paymentPending: "/payment/pending",
   cart: "/cart",
-  checkout: "/checkout",
+  
   checkout: "/checkout",
   account: "/account",
   accountProfile: "/account/profile",
