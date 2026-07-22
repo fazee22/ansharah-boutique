@@ -47,9 +47,11 @@ export interface ProductFormValues {
   stockQuantity: string;
   status: AdminProductStatus;
   isFeatured: boolean;
-  isNewArrival: boolean;
-  isSale: boolean;
-  tags: string[];
+isNewArrival: boolean;
+isSale: boolean;
+newArrivalPosition: number | null;
+salePosition: number | null;
+tags: string[];
   seoTitle?: string;
   seoDescription?: string;
 }
