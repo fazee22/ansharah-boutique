@@ -93,7 +93,7 @@ function Hero() {
     return <section className="h-[88svh] min-h-[560px] w-full bg-ink sm:h-[92svh]" aria-hidden="true" />;
   }
 
-  const slide = slides[activeIndex];
+  const slide = slides[activeIndex]!;
 
   return (
     <section
