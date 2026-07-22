@@ -2,7 +2,6 @@ import type { AdminCategory } from "./category";
 
 export type AdminProductStatus = "draft" | "published" | "hidden";
 
-/** Mirrors `backend/app/Http/Resources/Admin/ProductImageResource.php`. */
 export interface AdminProductImage {
   id: number;
   url: string;
@@ -10,7 +9,6 @@ export interface AdminProductImage {
   isFeatured: boolean;
 }
 
-/** Mirrors `backend/app/Http/Resources/Admin/ProductResource.php`. */
 export interface AdminProduct {
   id: number;
   categoryId: number;
@@ -27,6 +25,8 @@ export interface AdminProduct {
   isFeatured: boolean;
   isNewArrival: boolean;
   isSale: boolean;
+  newArrivalPosition: number | null;
+  salePosition: number | null;
   tags: string[];
   seoTitle: string | null;
   seoDescription: string | null;
@@ -47,11 +47,9 @@ export interface ProductFormValues {
   stockQuantity: string;
   status: AdminProductStatus;
   isFeatured: boolean;
-isNewArrival: boolean;
-isSale: boolean;
-newArrivalPosition: number | null;
-salePosition: number | null;
-tags: string[];
+  isNewArrival: boolean;
+  isSale: boolean;
+  tags: string[];
   seoTitle?: string;
   seoDescription?: string;
 }
