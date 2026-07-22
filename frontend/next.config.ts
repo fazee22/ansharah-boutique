@@ -23,12 +23,9 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
 
+ typedRoutes: false,
+
   experimental: {
-    // Re-enable once every route referenced in `constants/navigation.ts`
-    // and `constants/routes.ts` has a corresponding page (Phase 3+) —
-    // until then, typed routes would fail to compile against links
-    // that intentionally point at not-yet-built pages.
-    typedRoutes: false,
     // Phase 9: only import the specific icons/exports actually used
     // from these packages into each page's bundle, instead of the
     // whole library — meaningfully smaller client JS with zero code
