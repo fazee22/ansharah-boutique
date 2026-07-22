@@ -7,7 +7,7 @@ export default function AdminAutoMovingSliderPage() {
       <div>
         <h1 className="font-display text-display-sm font-light text-foreground">Auto Moving Slider</h1>
         <p className="text-body-sm text-muted-foreground">
-          The homepage's continuously scrolling category strip — upload images, reorder by
+        The homepage&apos;s continuously scrolling category strip — upload images, reorder by
           drag-and-drop, and tune exactly how it moves.
         </p>
       </div>

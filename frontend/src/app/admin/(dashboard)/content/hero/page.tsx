@@ -6,7 +6,7 @@ export default function AdminHeroBannerPage() {
       <div>
         <h1 className="font-display text-display-sm font-light text-foreground">Hero Banner</h1>
         <p className="text-body-sm text-muted-foreground">
-          Upload, edit, reorder, and enable/disable the homepage's multi-slide hero banner.
+          Upload, edit, reorder, and enable/disable the homepage&apos;s multi-slide hero banner.
         </p>
       </div>
       <SlideManager type="hero" showEditorialFields />
