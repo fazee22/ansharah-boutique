@@ -20,7 +20,7 @@ function readEnv(key: string, fallback?: string): string {
 
 export const env = {
   api: {
-    baseUrl: readEnv("NEXT_PUBLIC_API_BASE_URL", "http://127.0.0.1:8000/api/v1"),
+    baseUrl: readEnv("NEXT_PUBLIC_API_BASE_URL", "https://ansharah-boutique-production.up.railway.app/api/v1"),
     timeoutMs: Number(readEnv("NEXT_PUBLIC_API_TIMEOUT_MS", "15000")),
   },
   app: {
