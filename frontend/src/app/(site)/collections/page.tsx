@@ -10,6 +10,7 @@ import { CollectionSubcategories } from "@/components/collections/collection-sub
 import { CollectionExplorer } from "@/components/collections/collection-explorer";
 import { Container } from "@/components/shared/container";
 
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Collections",
   description: "Browse every collection — Summer, Winter, and the Shawl edit — in one place.",

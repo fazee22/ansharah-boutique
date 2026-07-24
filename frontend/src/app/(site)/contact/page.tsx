@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site";
 import { publicSettingsService } from "@/services/api/settings.service";
 import { buildWhatsAppGeneralLink } from "@/lib/whatsapp";
 
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Contact Us",
   description: `Get in touch with the ${siteConfig.name} team.`,

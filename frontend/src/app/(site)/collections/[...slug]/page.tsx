@@ -36,7 +36,7 @@ export function generateStaticParams() {
   if (!collectionsNode?.children) return [];
   return collectAllPaths(collectionsNode.children).map((slug) => ({ slug }));
 }
-
+export const dynamic = "force-dynamic";
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const resolved = resolve(slug);

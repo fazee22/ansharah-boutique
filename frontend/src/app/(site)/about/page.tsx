@@ -6,7 +6,7 @@ import { MediaPlaceholder } from "@/components/shared/media-placeholder";
 import { Reveal } from "@/components/shared/reveal";
 import { publicSettingsService } from "@/services/api/settings.service";
 import { siteConfig } from "@/config/site";
-
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "About Us",
   description: `The story, mission, and values behind ${siteConfig.name}.`,

@@ -5,6 +5,7 @@ import { CollectionExplorer } from "@/components/collections/collection-explorer
 import { productsService } from "@/services/api/products.service";
 import { ROUTES } from "@/constants/routes";
 
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Sale",
   description: "Considered reductions across the catalog, while they last.",
