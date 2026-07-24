@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { useWishlistStore } from "@/store/wishlist-store";
 import { useHasMounted } from "@/hooks/use-has-mounted";
 import { formatCurrency } from "@/lib/format";
+import { optimizeImage } from "@/lib/optimize-image";
 import { ROUTES } from "@/constants/routes";
 import { cn } from "@/lib/utils";
 import type { Product } from "@/types/product";
@@ -50,7 +51,7 @@ const toggleWishlist = useWishlistStore((state) => state.toggle);
   {displayImage?.url ? (
     // eslint-disable-next-line @next/next/no-img-element -- real, admin-uploaded product photo
     <img
-      src={displayImage.url}
+      src={optimizeImage(displayImage.url, 600)}
       alt={displayImage.alt ?? product.name}
       className={cn(
         "aspect-[3/4] w-full object-cover transition-transform duration-[900ms] ease-luxury-ease",

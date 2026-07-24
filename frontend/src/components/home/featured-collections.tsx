@@ -9,6 +9,7 @@ import { useFeaturedCategories } from "@/hooks/use-featured-categories";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import { motion } from "framer-motion";
 import { ROUTES } from "@/constants/routes";
+import { optimizeImage } from "@/lib/optimize-image";
 
 const featuredCollections = [
   {
@@ -59,7 +60,7 @@ function FeaturedCollections() {
                 {imageUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element -- admin-uploaded Cloudinary category image
                   <img
-                    src={imageUrl}
+                    src={optimizeImage(imageUrl, 800)}
                     alt={collection.title}
                     className="aspect-[4/3] w-full object-cover transition-transform duration-[1400ms] ease-luxury-ease group-hover:scale-[1.06]"
                   />

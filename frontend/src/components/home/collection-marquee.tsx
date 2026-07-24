@@ -8,6 +8,7 @@ import { SectionTitle } from "@/components/shared/section-title";
 import { useCategoryImageMap } from "@/hooks/use-category-image-map";
 import { primaryNav } from "@/constants/navigation";
 import { collectAtDepth } from "@/lib/nav-tree";
+import { optimizeImage } from "@/lib/optimize-image";
 
 const collectionsNode = primaryNav.find((item) => item.id === "collections");
 const marqueeItems = collectionsNode ? collectAtDepth(collectionsNode, 2) : [];
@@ -45,7 +46,7 @@ function CollectionMarquee() {
                 {imageUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element -- admin-uploaded Cloudinary category image
                   <img
-                    src={imageUrl}
+                    src={optimizeImage(imageUrl, 500)}
                     alt={item.label}
                     className="aspect-[3/4] w-full object-cover transition-transform duration-[900ms] ease-luxury-ease group-hover:scale-105"
                   />

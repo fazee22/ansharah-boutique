@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ZoomIn } from "lucide-react";
 import { MediaPlaceholder } from "@/components/shared/media-placeholder";
 import { useImageGallery } from "@/hooks/use-image-gallery";
+import { optimizeImage } from "@/lib/optimize-image";
 import { cn } from "@/lib/utils";
 import type { ProductImage } from "@/types/product";
 

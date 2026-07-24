@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { MediaPlaceholder } from "@/components/shared/media-placeholder";
+import { optimizeImage } from "@/lib/optimize-image";
 import type { NavNode } from "@/types/navigation";
 
 function slugFromHref(href: string | undefined): string | null {
@@ -26,7 +27,7 @@ function CollectionSubcategories({ items, imageMap = {} }: { items: NavNode[]; i
             {imageUrl ? (
               // eslint-disable-next-line @next/next/no-img-element -- admin-uploaded Cloudinary category image
               <img
-                src={imageUrl}
+                src={optimizeImage(imageUrl, 500)}
                 alt={item.label}
                 className="aspect-square w-full object-cover transition-transform duration-[900ms] ease-luxury-ease group-hover:scale-105"
               />

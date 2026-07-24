@@ -10,6 +10,7 @@ import { Container } from "@/components/shared/container";
 import { useHeroSlides } from "@/hooks/use-hero-slides";
 import { heroSlides as staticHeroSlides } from "@/constants/hero-slides";
 import { ROUTES } from "@/constants/routes";
+import { optimizeImage } from "@/lib/optimize-image";
 import { cn } from "@/lib/utils";
 
 const AUTOPLAY_MS = 6500;
@@ -115,7 +116,7 @@ function Hero() {
         >
           {slide.imageUrl ? (
   // eslint-disable-next-line @next/next/no-img-element -- admin-uploaded Cloudinary hero image, arbitrary external URL
-  <img src={slide.imageUrl} alt={slide.title} className="h-full w-full object-cover" />
+ <img src={optimizeImage(slide.imageUrl, 1600)} alt={slide.title} className="h-full w-full object-cover" />
 ) : (
   <MediaPlaceholder ratio="wide" tone={slide.tone} label={slide.title} className="h-full w-full" />
 )}
